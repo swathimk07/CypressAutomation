@@ -1,0 +1,90 @@
+# Copyright (c) 1993-2009 Microsoft Corp.
+#
+# This is a sample HOSTS file used by Microsoft TCP/IP for Windows.
+#
+# This file contains the mappings of IP addresses to host names. Each
+# entry should be kept on an individual line. The IP address should
+# be placed in the first column followed by the corresponding host name.
+# The IP address and the host name should be separated by at least one
+# space.
+#
+# Additionally, comments (such as these) may be inserted on individual
+# lines or following the machine name denoted by a '#' symbol.
+#
+# For example:
+#
+#      102.54.94.97     rhino.acme.com          # source server
+#       38.25.63.10     x.acme.com              # x client host
+
+# localhost name resolution is handled within DNS itself.
+#	127.0.0.1       localhost
+#	::1             localhost
+127.0.0.1  www.voot.com
+127.0.0.1  www.snapdeal.com
+127.0.0.1  plus.google.com
+127.0.0.1  in.pinterest.com
+127.0.0.1  www.tumblr.com
+127.0.0.1  www.snapchat.com
+127.0.0.1  www.flickr.com
+127.0.0.1  www.metacafe.com
+127.0.0.1  tubemate.net
+127.0.0.1  play.google.com
+127.0.0.1  yts.ag
+127.0.0.1  www.torlock.com
+127.0.0.1  www.movie4all.co
+127.0.0.1  1337x.to
+127.0.0.1  torrentz2.eu
+127.0.0.1  www.limetorrents.cc
+127.0.0.1  world4ufree.ws
+127.0.0.1  kat.cr
+127.0.0.1  thepiratebay.se
+127.0.0.1  www.torrenthounds.com
+127.0.0.1  isohunt.to
+127.0.0.1  www.proxysite.com
+127.0.0.1  www.metacafe.com
+127.0.0.1  tubemate.
+127.0.0.1  play.google.com
+127.0.0.1  yts.ag
+127.0.0.1  www.torlock.com
+127.0.0.1  www.movie4all.co
+127.0.0.1  1337x.to
+127.0.0.1  torrentz2.eu
+127.0.0.1  www.limetorrents.cc
+127.0.0.1  world4ufree.ws
+127.0.0.1  kat.cr
+127.0.0.1  thepiratebay.se
+127.0.0.1  www.torrenthounds.com
+127.0.0.1  isohunt.to
+127.0.0.1  www.proxysite.com
+127.0.0.1  www.voot.com
+127.0.0.1  www.hotstar.com
+127.0.0.1  17ebook.com
+127.0.0.1  aladel.net
+127.0.0.1  bpwhamburgorchardpark.org
+127.0.0.1  clicnews.com
+127.0.0.1  dfwdiesel.net
+127.0.0.1  divineenterprises.net
+127.0.0.1  fantasticfilms.ru
+127.0.0.1  gardensrestaurantandcatering.com
+127.0.0.1  ginedis.com
+127.0.0.1  gncr.org
+127.0.0.1  hdvideoforums.org
+127.0.0.1  hihanin.com
+127.0.0.1  kingfamilyphotoalbum.com
+127.0.0.1  likaraoke.com
+127.0.0.1  mactep.org
+127.0.0.1  magic4you.nu
+127.0.0.1  marbling.pe.kr
+127.0.0.1  nacjalneg.info
+127.0.0.1  pronline.ru
+127.0.0.1  purplehoodie.com
+127.0.0.1  qsng.cn
+127.0.0.1  seksburada.net
+127.0.0.1  sportsmansclub.net
+127.0.0.1  stock888.cn
+127.0.0.1  tathli.com
+127.0.0.1  teamclouds.com
+127.0.0.1  texaswhitetailfever.com
+127.0.0.1  wadefamilytree.org
+127.0.0.1  xnescat.info
+127.0.0.1  yt118.com 

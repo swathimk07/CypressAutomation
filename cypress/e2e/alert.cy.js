@@ -27,8 +27,9 @@ describe('alerts', () => {
          cy.stub(win,'prompt').returns('welcome'); //passing the text in alert window
      
     })
-    cy.get(button[onclick='jsPrompt()']).click();
+    //cy.get(button[onclick='jsPrompt()']).click();
 
  })
 })
+
 

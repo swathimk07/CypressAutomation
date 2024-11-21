@@ -30,7 +30,7 @@ describe("assertions", ()=>{
         cy.get("button[type='submit']").click()
 
         //javascript for explict assertions
-        let expName="manda user" //let is a keyword used in js to define any variable
+        let expName="testFN testLN" //let is a keyword used in js to define any variable
         cy.get(".oxd-userdropdown-name").then( (x) =>{ //variable of name copied to x
         let actName=x.text //using x parameter into body of the method
         //BDD style we use expect keyword

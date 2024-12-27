@@ -5,8 +5,8 @@ describe('Login', () => {
       cy.wait(7000); // Waits for 5 seconds (5000 milliseconds)
       cy.get(':nth-child(2) > .firebaseui-idp-button').click()//email
       cy.get('.mdl-textfield__input').type('ranvitharao@gmail.com');
-      cy.get('.firebaseui-id-submit').click()//submit email 
-      cy.get(':nth-child(3) > .mdl-textfield__input').type('Avanti@123');
+      cy.get('.firebaseui-id-submit').click().debug()//submit email 
+      cy.get(':nth-child(3) > .mdl-textfield__input').type('Avanti@123').pause()
       cy.get('.firebaseui-id-submit').click()//submit pwd
       cy.get('.app-toolbar-row > :nth-child(1) > [aria-haspopup="true"]').click()//click create
       cy.wait(7000); // Waits for 5 seconds (5000 milliseconds)

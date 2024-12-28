@@ -40,9 +40,11 @@ module.exports = defineConfig({
               }
             });
           });
-        }
+        },
       });
-    }
+    },
+    video: true,
+    screenshotOnRunFailure: true,
   },
   reporter: "cypress-mochawesome-reporter",
   reporterOptions: {
@@ -50,7 +52,5 @@ module.exports = defineConfig({
     overwrite: false,
     html: false,
     json: true,
-  }
-  
+  },
 });
-

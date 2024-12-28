@@ -1,0 +1,123 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-12-02T07:00:53.238Z",
+    "end": "2024-12-02T07:01:02.456Z",
+    "duration": 9218,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "ffbdbff6-d16c-4a43-a0a3-ee46663a60d3",
+      "title": "",
+      "fullFile": "cypress\\e2e\\alert.cy.js",
+      "file": "cypress\\e2e\\alert.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "83fd9edf-51f3-466c-b9bd-daf8e5689446",
+          "title": "alerts",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "js confirm alerts",
+              "fullTitle": "alerts js confirm alerts",
+              "timedOut": null,
+              "duration": 4249,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://the-internet.herokuapp.com/javascript_alerts');\ncy.get(\"button[onclick='jsConfirm()']\").click();\ncy.on('window:confirm', t => {\n  //validating alert window, to trigger the event(cy.on) t is a method used to store an event\n  expect(t).to.contains(\"I am a JS Confirm\"); //validating text on alert window\n});\ncy.on('window:confirm', () => false); //to click on cancel button, to click on ok we can replace false with true",
+              "err": {},
+              "uuid": "f958e918-8369-4430-9b3b-baef5878e163",
+              "parentUUID": "83fd9edf-51f3-466c-b9bd-daf8e5689446",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "js prompt alert",
+              "fullTitle": "alerts js prompt alert",
+              "timedOut": null,
+              "duration": 586,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://the-internet.herokuapp.com/javascript_alerts');\ncy.window().then(win => {\n  cy.stub(win, 'prompt').returns('welcome'); //passing the text in alert window\n});\n//cy.get(button[onclick='jsPrompt()']).click();",
+              "err": {},
+              "uuid": "51dbd106-02ef-48bf-a931-dd59bad98b99",
+              "parentUUID": "83fd9edf-51f3-466c-b9bd-daf8e5689446",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "f958e918-8369-4430-9b3b-baef5878e163",
+            "51dbd106-02ef-48bf-a931-dd59bad98b99"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4835,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

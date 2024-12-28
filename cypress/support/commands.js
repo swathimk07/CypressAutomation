@@ -25,6 +25,11 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 // 
 //https://docs.cypress.io/api/cypress-api/custom-commands
+import 'cypress-file-upload';
+require('cypress-iframe');
+
+import '@4tw/cypress-drag-drop'
+require('cypress-downloadfile/lib/downloadFileCommand')
 Cypress.Commands.add('login', (username, password) => { 
    
         cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login') //visit - built in comm
@@ -32,4 +37,7 @@ Cypress.Commands.add('login', (username, password) => {
         cy.get('input[name="password"]').type("password")
         cy.get('button[type="submit"]').click();
      
+ })
+ Cypress.Commands.add("parseXlsx", (inputFile) => {
+        return cy.task('parseXlsx', { filePath: inputFile })
  })

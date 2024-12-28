@@ -1,0 +1,108 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2024-12-02T07:01:37.472Z",
+    "end": "2024-12-02T07:02:56.761Z",
+    "duration": 79289,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "594790c7-6a97-4db9-afa4-a41e1e57a8b5",
+      "title": "",
+      "fullFile": "cypress\\e2e\\CSSlogin.cy.js",
+      "file": "cypress\\e2e\\CSSlogin.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "d22a8fa2-6c69-4025-8c0d-aa72102be799",
+          "title": "Login",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Login",
+              "fullTitle": "Login Login",
+              "timedOut": null,
+              "duration": 75786,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://avantidash-dot-indihood-qa-in.appspot.com/');\ncy.wait(7000); // Waits for 5 seconds (5000 milliseconds)\ncy.get(':nth-child(2) > .firebaseui-idp-button').click(); //email\ncy.get('.mdl-textfield__input').type('ranvitharao@gmail.com');\ncy.get('.firebaseui-id-submit').click(); //submit email \ncy.get(':nth-child(3) > .mdl-textfield__input').type('Avanti@123');\ncy.get('.firebaseui-id-submit').click(); //submit pwd\ncy.get('.app-toolbar-row > :nth-child(1) > [aria-haspopup=\"true\"]').click(); //click create\ncy.wait(7000); // Waits for 5 seconds (5000 milliseconds)\ncy.get(':nth-child(14) > .mat-menu-item').click(); //select loan application\ncy.wait(12000);\ncy.get(':nth-child(2) > :nth-child(1) > :nth-child(1) > section.ng-star-inserted > app-single-field > [fxlayout=\"row inline\"] > .field-wrapper > app-id-field.ng-star-inserted > .value').click(); //click not set\ncy.wait(10000); // Waits for 5 seconds (5000 milliseconds)\ncy.get('#mat-input-1').type('Swathi - MK - Aadhaar3700'); //type  applicant\ncy.wait(9000);\ncy.get('.mat-option-text > .ng-star-inserted').contains('Swathi - MK - Aadhaar3700').click(); //select applicant\ncy.wait(9000);\ncy.get('section.ng-star-inserted > [fxlayout=\"row\"] > :nth-child(2) > .mat-icon').click(); //click on applicant name\ncy.get('.value > span > img').click(); //location\ncy.get('.button-panel > .mat-raised-button').click(); //select location\ncy.get(':nth-child(2) > :nth-child(4) > :nth-child(1) > section.ng-star-inserted > app-single-field > [fxlayout=\"row inline\"] > .field-wrapper > app-id-field.ng-star-inserted > .value').click(); //loan product\ncy.get('#mat-option-20 > .mat-option-text > .ng-star-inserted').click();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#mat-option-20 > .mat-option-text > .ng-star-inserted`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#mat-option-20 > .mat-option-text > .ng-star-inserted`, but never found it.\n    at Context.eval (webpack:///./cypress/e2e/CSSlogin.cy.js:25:9)",
+                "diff": null
+              },
+              "uuid": "5f71d9a2-28c6-48dd-ab49-727a5945a0cb",
+              "parentUUID": "d22a8fa2-6c69-4025-8c0d-aa72102be799",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "5f71d9a2-28c6-48dd-ab49-727a5945a0cb"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 75786,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

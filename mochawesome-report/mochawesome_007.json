@@ -1,0 +1,142 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-12-02T07:04:36.229Z",
+    "end": "2024-12-02T07:04:51.370Z",
+    "duration": 15141,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "684dfc25-6004-45df-a5f6-a7c3bb3ca0f4",
+      "title": "",
+      "fullFile": "cypress\\e2e\\Week 2.customcommands.cy.js",
+      "file": "cypress\\e2e\\Week 2.customcommands.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "575d667a-6422-48a9-abd7-c41e8f4e786c",
+          "title": "customsuite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Login",
+              "fullTitle": "customsuite Login",
+              "timedOut": null,
+              "duration": 4915,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.login('Admin', 'admin123'); //valid data\ncy.title().should('be.equal', 'OrangeHRM');",
+              "err": {},
+              "uuid": "0b2aa6ae-1c73-4459-bc7c-c60b3ca7977c",
+              "parentUUID": "575d667a-6422-48a9-abd7-c41e8f4e786c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "AddCustomer",
+              "fullTitle": "customsuite AddCustomer",
+              "timedOut": null,
+              "duration": 2948,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//login script\ncy.login('Admin', 'admin163'); //invalid\ncy.title().should('be.equal', 'OrangeHRM');\n//Add customer script\ncy.log('Adding customer');",
+              "err": {},
+              "uuid": "cb81e727-166e-4790-a872-41edf65b0a29",
+              "parentUUID": "575d667a-6422-48a9-abd7-c41e8f4e786c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "EditCustomer",
+              "fullTitle": "customsuite EditCustomer",
+              "timedOut": null,
+              "duration": 3668,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//Login script\ncy.login('swathi@qaoncloud.com', 'cloud@2021');\n//Editing customer\ncy.log('Editing customer');",
+              "err": {},
+              "uuid": "ccc29223-e7fa-40d6-ba2b-a79209b6fb27",
+              "parentUUID": "575d667a-6422-48a9-abd7-c41e8f4e786c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "0b2aa6ae-1c73-4459-bc7c-c60b3ca7977c",
+            "cb81e727-166e-4790-a872-41edf65b0a29",
+            "ccc29223-e7fa-40d6-ba2b-a79209b6fb27"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 11531,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

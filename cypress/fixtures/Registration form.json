@@ -1,0 +1,16 @@
+{
+  
+    "FirstName": "swathi",
+    "LastName": "MK",
+    "Gender": "Female",
+    "Department": ["MPDC", "MCTC", "MCR"],
+    "Email": "john.oliver@abc.com",
+    "ContactNo": "916366311286", 
+    "Hobbies": ["Reading", "Singing", "Swimming"],
+    "Username": "swathimk",
+    "Password": "cloud9090",
+    "CnfPwd": "cloud9090",
+    "add": "Thank you"
+
+  }
+  

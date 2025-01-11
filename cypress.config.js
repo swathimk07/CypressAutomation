@@ -44,7 +44,7 @@ module.exports = defineConfig({
       });
     },
     video: true,
-    screenshotOnRunFailure: true,
+    screenshot: true,
   },
   reporter: "cypress-mochawesome-reporter",
   reporterOptions: {
@@ -53,4 +53,13 @@ module.exports = defineConfig({
     html: false,
     json: true,
   },
+  
 });
+module.exports = {
+  e2e: {
+    pageLoadTimeout: 150000, // Increase the timeout to 2 minutes
+    setupNodeEvents(on, config) {
+      // implement node event listeners here
+    },
+  },
+};

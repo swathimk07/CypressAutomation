@@ -1,34 +1,13 @@
-<<<<<<< HEAD
 {
-  
-    "FirstName": "swathi",
-    "LastName": "MK",
-    "Gender": "Female",
-    "Department": ["MPDC", "MCTC", "MCR"],
-    "Email": "john.oliver@abc.com",
-    "ContactNo": "916366311286", 
-    "Hobbies": ["Reading", "Singing", "Swimming"],
-    "Username": "swathimk",
-    "Password": "cloud9090",
-    "CnfPwd": "cloud9090",
-    "add": "Thank you"
-
-  }
-=======
-{
-  
-    "FirstName": "swathi",
-    "LastName": "MK",
-    "Gender": "Female",
-    "Department": ["MPDC", "MCTC", "MCR"],
-    "Email": "john.oliver@abc.com",
-    "ContactNo": "916366311286", 
-    "Hobbies": ["Reading", "Singing", "Swimming"],
-    "Username": "swathimk",
-    "Password": "cloud9090",
-    "CnfPwd": "cloud9090",
-    "add": "Thank you"
-
-  }
->>>>>>> 809c4f67599cc5eebdbddbbfdc66a16b75ed390d
-  
+  "FirstName": "swathi",
+  "LastName": "MK",
+  "Gender": "Female",
+  "Department": ["MPDC", "MCTC", "MCR"],
+  "Email": "john.oliver@abc.com",
+  "ContactNo": "916366311286",
+  "Hobbies": ["Reading", "Singing", "Swimming"],
+  "Username": "swathimk",
+  "Password": "cloud9090",
+  "CnfPwd": "cloud9090",
+  "add": "Thank you"
+}

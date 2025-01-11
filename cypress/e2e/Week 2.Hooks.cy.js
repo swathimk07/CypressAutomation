@@ -1,64 +1,32 @@
-<<<<<<< HEAD
-//Hooks - before, after, before each, after each(derived from mocha framework) - usage - to specify any prerequisite before starting the execution
-describe('hooks',() => {
-
-    before(()=>{
-        cy.log("launch application") //log - It is used to output custom messages to the Cypress Test Runner's Command Log
-    })
-    
-    after(()=>{
-        cy.log("close app")
-    })
-
-    beforeEach(()=>{
-        cy.log("login")
-    })
-
-    afterEach(()=>{
-        cy.log("logout")
-    })
-
-    it('search', () =>{
-         cy.log("searching")
-    })
-
-    it.skip('Advance search', ()=>{ //skip is a tag used to skip specific it block
-        cy.log("advanced searching")
-    })
-
-    it.only('listing products', ()=>{
-        cy.log("listing products")
-    })
-=======
-//Hooks - before, after, before each, after each(derived from mocha framework) - usage - to specify any prerequisite before starting the execution
-describe('hooks',() => {
-
-    before(()=>{
-        cy.log("launch application") //log - It is used to output custom messages to the Cypress Test Runner's Command Log
-    })
-    
-    after(()=>{
-        cy.log("close app")
-    })
-
-    beforeEach(()=>{
-        cy.log("login")
-    })
-
-    afterEach(()=>{
-        cy.log("logout")
-    })
-
-    it('search', () =>{
-         cy.log("searching")
-    })
-
-    it.skip('Advance search', ()=>{ //skip is a tag used to skip specific it block
-        cy.log("advanced searching")
-    })
-
-    it.only('listing products', ()=>{
-        cy.log("listing products")
-    })
->>>>>>> 809c4f67599cc5eebdbddbbfdc66a16b75ed390d
-})
+// Hooks - before, after, beforeEach, afterEach (derived from Mocha framework)
+// Usage: To specify any prerequisite or cleanup actions for test execution
+describe('hooks', () => {
+    before(() => {
+      cy.log("launch application"); // Log a custom message to the Cypress Test Runner's Command Log
+    });
+  
+    after(() => {
+      cy.log("close app");
+    });
+  
+    beforeEach(() => {
+      cy.log("login");
+    });
+  
+    afterEach(() => {
+      cy.log("logout");
+    });
+  
+    it('search', () => {
+      cy.log("searching");
+    });
+  
+    it.skip('Advance search', () => { // 'skip' is used to skip this specific test block
+      cy.log("advanced searching");
+    });
+  
+    it.only('listing products', () => { // 'only' ensures that only this test block is executed
+      cy.log("listing products");
+    });
+  });
+  

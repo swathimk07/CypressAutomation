@@ -1,94 +1,42 @@
-<<<<<<< HEAD
-describe("assertions", ()=>{
+describe("Assertions", () => {
 
-    it("implicit assertions", ()=>{
-        cy.visit("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login")
-        
-        //should and
+    it("Implicit Assertions", () => {
+        cy.visit("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
 
-        //cy.url().should('include','orangehrmlive.com') //checking the text in the provided URL
-        //cy.url().should('eq','https://opensource-demo.orangehrmlive.com/web/index.php/auth/login') //checking the URL
-        //cy.url().should('contain','orangehrm')
+        // Validate the URL using implicit assertions
+        cy.url()
+            .should('include', 'orangehrmlive.com')
+            .and('eq', 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
+            .and('contain', 'orangehrm')
+            .and('not.contain', 'greenhrm');
 
-        //cy.url().should('include','orangehrmlive.com')
-        //.should('eq','https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
+        // Validate the visibility and value of the Username field
+        cy.get("input[placeholder='Username']")
+            .type("Admin")
+            .should('have.value', 'Admin');
+    });
 
-        cy.url().should('include','orangehrmlive.com')
-       .and('eq','https://opensource-demo.orangehrmlive.com/web/index.php/auth/login') //checking the URL
-       .and('contain','orangehrm')
-       .and('not.contain','greenhrm')
-       //be.visible - one more assertion
-       cy.get("input[placeholder='Username']").type("Admin") //provide value to text box
-       cy.get("input[placeholder='Username']").should('have.value','Admin')
-       
+    it("Explicit Assertions", () => {
+        cy.visit("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
 
-    })
+        // Enter credentials and submit the form
+        cy.get("input[placeholder='Username']").type('Admin');
+        cy.get("input[placeholder='Password']").type('admin123');
+        cy.get("button[type='submit']").click();
 
-    it("explicit assertions", ()=>{
-        cy.visit("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login")
-        cy.get("input[placeholder='Username']").type('Admin')
-        cy.get("input[placeholder='Password']").type('admin123')
-        cy.get("button[type='submit']").click()
+        // Perform explicit assertions on the user dropdown name
+        const expectedName = "testFN testLN"; // Define the expected name
+        cy.get(".oxd-userdropdown-name").then((dropdown) => {
+            const actualName = dropdown.text(); // Extract text from the element
+            
+            // BDD style assertions
+            expect(actualName).to.eq(expectedName);
+            expect(actualName).to.not.eq(expectedName);
 
-        //javascript for explict assertions
-        let expName="testFN testLN" //let is a keyword used in js to define any variable
-        cy.get(".oxd-userdropdown-name").then( (x) =>{ //variable of name copied to x
-        let actName=x.text //using x parameter into body of the method
-        //BDD style we use expect keyword
-          expect(actName).to.eq(expName)
-          expect(actName).to.not.eq(expName)
+            // TDD style assertions
+            assert.equal(actualName, expectedName, "Expected and actual names match");
+            assert.notEqual(actualName, expectedName, "Expected and actual names do not match");
+        });
+    });
 
-        //TDD style use assert keyword
-        assert.equal(actName,expName)
-        assert.notEqual(actName,expName)
-
-        })
-    })
-=======
-describe("assertions", ()=>{
-
-    it("implicit assertions", ()=>{
-        cy.visit("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login")
-        
-        //should and
-
-        //cy.url().should('include','orangehrmlive.com') //checking the text in the provided URL
-        //cy.url().should('eq','https://opensource-demo.orangehrmlive.com/web/index.php/auth/login') //checking the URL
-        //cy.url().should('contain','orangehrm')
-
-        //cy.url().should('include','orangehrmlive.com')
-        //.should('eq','https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
-
-        cy.url().should('include','orangehrmlive.com')
-       .and('eq','https://opensource-demo.orangehrmlive.com/web/index.php/auth/login') //checking the URL
-       .and('contain','orangehrm')
-       .and('not.contain','greenhrm')
-       //be.visible - one more assertion
-       cy.get("input[placeholder='Username']").type("Admin") //provide value to text box
-       cy.get("input[placeholder='Username']").should('have.value','Admin')
-       
-
-    })
-
-    it("explicit assertions", ()=>{
-        cy.visit("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login")
-        cy.get("input[placeholder='Username']").type('Admin')
-        cy.get("input[placeholder='Password']").type('admin123')
-        cy.get("button[type='submit']").click()
-
-        //javascript for explict assertions
-        let expName="testFN testLN" //let is a keyword used in js to define any variable
-        cy.get(".oxd-userdropdown-name").then( (x) =>{ //variable of name copied to x
-        let actName=x.text //using x parameter into body of the method
-        //BDD style we use expect keyword
-          expect(actName).to.eq(expName)
-          expect(actName).to.not.eq(expName)
-
-        //TDD style use assert keyword
-        assert.equal(actName,expName)
-        assert.notEqual(actName,expName)
-
-        })
-    })
->>>>>>> 809c4f67599cc5eebdbddbbfdc66a16b75ed390d
-})
+});

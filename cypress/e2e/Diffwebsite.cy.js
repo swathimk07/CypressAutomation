@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 describe('popup', () =>{
     before(() =>{
         cy.visit("https://qaboxletstestcypresspracticesite.netlify.app/differentalerttypes")
@@ -46,7 +45,6 @@ describe('popup', () =>{
         
 })
 
-=======
 describe('popup', () =>{
     before(() =>{
         cy.visit("https://qaboxletstestcypresspracticesite.netlify.app/differentalerttypes")
@@ -94,4 +92,4 @@ describe('popup', () =>{
         
 })
 
->>>>>>> 809c4f67599cc5eebdbddbbfdc66a16b75ed390d
+

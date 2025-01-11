@@ -1,73 +1,48 @@
-<<<<<<< HEAD
-//javascript alert
+// JavaScript Alerts Testing
 describe('alerts', () => {
-   it('js alerts', () => {
-    cy.visit('https://the-internet.herokuapp.com/javascript_alerts')
-    cy.get("button[onclick='jsAlert()']").click() //css element of first  button
-    cy.on('window:alert',(t)=>{ //validating alert window, to trigger the event(cy.on) t is a method used to store an event
-        expect(t).to.contains("I am a JS Alert"); //validating text on alert window
 
-    })
+    // JavaScript Alert
+    it('js alerts', () => {
+        cy.visit('https://the-internet.herokuapp.com/javascript_alerts');
+        
+        // Trigger JS Alert
+        cy.get("button[onclick='jsAlert()']").click();
+        
+        // Validate alert text
+        cy.on('window:alert', (t) => {
+            expect(t).to.contains("I am a JS Alert");
+        });
+    });
 
-   })
-//javascript confirmation alert
-   it.only('js confirm alerts', () => {
-    cy.visit('https://the-internet.herokuapp.com/javascript_alerts')
-    cy.get("button[onclick='jsConfirm()']").click()
-    cy.on('window:confirm',(t)=>{ //validating alert window, to trigger the event(cy.on) t is a method used to store an event
-        expect(t).to.contains("I am a JS Confirm"); //validating text on alert window
-    })
-    cy.on('window:confirm',()=> false); //to click on cancel button, to click on ok we can replace false with true
+    // JavaScript Confirmation Alert
+    it('js confirm alerts', () => {
+        cy.visit('https://the-internet.herokuapp.com/javascript_alerts');
+        
+        // Trigger JS Confirm Alert
+        cy.get("button[onclick='jsConfirm()']").click();
+        
+        // Validate confirm alert text
+        cy.on('window:confirm', (t) => {
+            expect(t).to.contains("I am a JS Confirm");
+        });
+        
+        // Click on Cancel (set to false)
+        cy.on('window:confirm', () => false);
+    });
 
-    
-    })
-    //Js prompt alert
-   it.only('js prompt alert',()=>{
-    cy.visit('https://the-internet.herokuapp.com/javascript_alerts')
-    cy.window().then((win)=> {
-         cy.stub(win,'prompt').returns('welcome'); //passing the text in alert window
-     
-    })
-    //cy.get(button[onclick='jsPrompt()']).click();
+    // JavaScript Prompt Alert
+    it('js prompt alert', () => {
+        cy.visit('https://the-internet.herokuapp.com/javascript_alerts');
+        
+        // Stub the window prompt and provide input text
+        cy.window().then((win) => {
+            cy.stub(win, 'prompt').returns('welcome');
+        });
 
- })
-})
+        // Trigger JS Prompt Alert
+        cy.get("button[onclick='jsPrompt()']").click();
+        
+        // Add validation or actions here as needed
+    });
 
-
-=======
-//javascript alert
-describe('alerts', () => {
-   it('js alerts', () => {
-    cy.visit('https://the-internet.herokuapp.com/javascript_alerts')
-    cy.get("button[onclick='jsAlert()']").click() //css element of first  button
-    cy.on('window:alert',(t)=>{ //validating alert window, to trigger the event(cy.on) t is a method used to store an event
-        expect(t).to.contains("I am a JS Alert"); //validating text on alert window
-
-    })
-
-   })
-//javascript confirmation alert
-   it.only('js confirm alerts', () => {
-    cy.visit('https://the-internet.herokuapp.com/javascript_alerts')
-    cy.get("button[onclick='jsConfirm()']").click()
-    cy.on('window:confirm',(t)=>{ //validating alert window, to trigger the event(cy.on) t is a method used to store an event
-        expect(t).to.contains("I am a JS Confirm"); //validating text on alert window
-    })
-    cy.on('window:confirm',()=> false); //to click on cancel button, to click on ok we can replace false with true
-
-    
-    })
-    //Js prompt alert
-   it.only('js prompt alert',()=>{
-    cy.visit('https://the-internet.herokuapp.com/javascript_alerts')
-    cy.window().then((win)=> {
-         cy.stub(win,'prompt').returns('welcome'); //passing the text in alert window
-     
-    })
-    //cy.get(button[onclick='jsPrompt()']).click();
-
- })
-})
-
-
->>>>>>> 809c4f67599cc5eebdbddbbfdc66a16b75ed390d
+});

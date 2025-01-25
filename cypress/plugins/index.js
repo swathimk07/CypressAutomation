@@ -43,6 +43,7 @@ module.exports = (on, config) => {
       return parseXlsx(filePath);
     },
   });
+  
 
   // Hook for custom task to interact with the test database
   on('task', {
@@ -57,4 +58,6 @@ module.exports = (on, config) => {
       return queryTestDb(query, config);
     },
   });
+  require('cypress-xpath');
+
 };

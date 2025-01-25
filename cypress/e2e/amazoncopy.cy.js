@@ -1,15 +1,22 @@
+import AmazonSignUp from "./PageObject/AmazonSignUp";
 Cypress.on('uncaught:exception', (err, runnable) => {
   // Returning false here prevents Cypress from failing the test
   return false;
 });
 describe('Amazon Signup Flow', () => {
- beforeEach(() => {
+ /*beforeEach(() => {
     cy.visit("https://www.amazon.in/")
-  });
+  });*/
    it('sign up', () => {
+    const am = new AmazonSignUp();
+    const signUp = new AmazonSignUp();
+
+    signUp.visit();
+    signUp.clickSignUp();
+    signUp.fillDetails('swathimk', '9483554959', 'swathimk');
      //  Amazon Signup page
      //cy.visit('https://www.amazon.in/');
-      cy.get('#nav-logo-sprites')
+      /*cy.get('#nav-logo-sprites')
       .should('be.visible') // Verify the logo is visible
       .screenshot('amazon-logo'); 
      
@@ -22,14 +29,14 @@ describe('Amazon Signup Flow', () => {
       cy.get('#ap_phone_number').type("9483554959")
       cy.get('#ap_password').type("swathimk")
       //cy.get('#ap_password_check').type("swathimk")
-      cy.get('#continue').click()
+      cy.get('#continue').click()*/
 
 
     })
     
       it("Sign in, search product, and add to cart", () => {
         // Sign in
-        //cy.visit("https://www.amazon.in/");
+        cy.visit("https://www.amazon.in/");
         cy.url().should("include", "amazon");
         cy.get("#nav-link-accountList-nav-line-1").click();
         cy.wait(3000)
@@ -46,15 +53,15 @@ describe('Amazon Signup Flow', () => {
         cy.wait(3000);
         cy.get("#twotabsearchtextbox").type("tshirt");
         cy.get("#nav-search-submit-button").click();
-        //cy.get("a[aria-label='Apply the filter Get It by Tomorrow to narrow results'] i[class='a-icon a-icon-checkbox']").click(); // Apply filter checkbox
-        cy.get("a[aria-label='Apply the filter Top Brands to narrow results'] i[class='a-icon a-icon-checkbox']").click()//select brand
+
+        //cy.get("a[aria-label='Apply the filter Get It by Tomorrow to narrow results'] i[class='a-icon a-icon-checkbox']").click(); //  checkbox
+        cy.get("a[aria-label='Apply the filter Top Brands to narrow results'] i[class='a-icon a-icon-checkbox']").click()//select brand - check box
         cy.get("button[value='S']").click(); // Select size
         cy.get("a[title='Reds'] div[class='colorsprite aok-float-left']").click(); // Select color
         
         // Step 3: Product listing and add specific product to cart
         cy.wait(3000)
         cy.get("#twotabsearchtextbox").clear({ force: true });
-
         cy.wait(3000)
         cy.get("#twotabsearchtextbox").type(
           "The Sanatan Dharam: True Source of all Technology"
@@ -71,6 +78,9 @@ describe('Amazon Signup Flow', () => {
         });
     
         cy.scrollTo(0, 500);
+        // Select a quantity (e.g., 2)
+cy.get('#a-autoid-1-announce').click() // dropdown
+cy.get('#quantity_1').click() // Choose the value you want to select
         cy.get("#add-to-cart-button").click();
         //cy.pause(); //
     
@@ -90,9 +100,10 @@ describe('Amazon Signup Flow', () => {
         
         //Logout
         cy.get("#nav-logo-sprites").click()
-        cy.get("span[class='nav-line-2 ']") // Replace with the menu item's selector
-  .trigger('mouseover');
-        cy.get("a[id='nav-item-signout'] span[class='nav-text']").click()
+        cy.get("span[class='nav-line-2 ']") 
+        .trigger('mouseover');
+              cy.get("a[id='nav-item-signout'] span[class='nav-text']").click()
+        
       });
     });
     

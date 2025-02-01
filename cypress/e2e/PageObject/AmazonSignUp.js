@@ -2,6 +2,9 @@
 class AmazonSignUp {
     visit() {
       cy.visit("https://www.amazon.in/");
+      cy.get('#nav-logo-sprites')
+      .should('be.visible') // Verify the logo is visible
+      //.screenshot('amazon-logo'); 
     }
   
     clickSignUp() {

@@ -3,7 +3,7 @@ Cypress.on('uncaught:exception', (err, runnable) => {
     return false;
   });
 describe('Practical 2 - Saucedemo', () => {
-    it('Saucedemo login, search a product, product listing, Add to cart and amount calculation)', () => { 
+    it('Saucedemo flow)', () => { 
     cy.visit('https://www.saucedemo.com/')
     cy.wait(10000)
     cy.get("#user-name").type("standard_user")
@@ -17,10 +17,10 @@ describe('Practical 2 - Saucedemo', () => {
     cy.get('.shopping_cart_link').click()
     cy.get('[data-test="item-quantity"]').should('have.length', '1')
     cy.get('[data-test="checkout"]').click()
-    cy.get('[data-test-"firstName"]').type("Soundarya")
-    cy.get('[data-test="lastName"]').type("5")
+    cy.get('[data-test-"firstName"]').type("Swathi")
+    cy.get('[data-test="lastName"]').type("m")
     cy.get('[data-test="continue"]').click()
-    cy.get('[data-test-"postalCode"]').type("607308")
+    cy.get('[data-test-"postalCode"]').type("574559")
     cy.get('[data-test="subtotal-label"]').should('have.text','Item total: $49.99')
     cy.get('[data-test="tax-label"]').should('have.text', 'Tax: $4.00')
     cy.get('[data-test="total-label"]').should('have.text', 'Total: $53.99')

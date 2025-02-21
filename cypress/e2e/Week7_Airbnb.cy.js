@@ -12,13 +12,15 @@ Cypress.on('uncaught:exception', (err, runnable) => {
       login.fillDetails()   
    
          //Check in/check 
-         cy.get('[data-testid="structured-search-input-field-query"]').click({ force: true })
-         cy.get('[data-testid="little-search-location"] > .f16sug5q').click() //anywhere
+         cy.get('[data-testid="structured-search-input-field-query"]').click({ force: true })// Assert that the field is focused after clicking
+
+         cy.get('[data-testid="little-search-location"] > .f16sug5q').type("paris") //anywhere
         //cy.get('[data-testid="little-search-location"] > .f16sug5q').type("paris")
-        cy.get('.ihcg2em').type("paris", { force: true })
         cy.get('[data-testid="structured-search-input-field-split-dates-0"] > .cz9siyu').click({ force: true })
          cy.wait(9000)
-         cy.get('button[data-state--date-string="2025-02-27"]').click({ force: true })
+         cy.get('button[data-state--date-string="2025-02-27"]', { timeout: 15000 }).should('be.visible') // Assert that the button is visible
+        .click({ force: true })
+         cy.wait(3000)
          cy.get('button[data-state--date-string="2025-02-28"]').click({ force: true })
 
     //it('navigate to all the options', ()=>{
@@ -39,7 +41,7 @@ Cypress.on('uncaught:exception', (err, runnable) => {
       cy.get('button[data-testid="category-bar-filter-button"]').click()
       cy.wait(3000)
       cy.get('[role="radio"][aria-describedby="room-filter-description-Room"]').click() //select room
-      cy.get('#price_filter_max').clear()
+      cy.get('#price_filter_max').should('be.visible') .clear()
       cy.get('#price_filter_max').type("3000") //select range
       cy.get(".stiimno.atm_l1_1wugsn5.atm_e2_1osqo2v.dir.dir-ltr").scrollTo('bottom')
       cy.get("button[data-testid='stepper-filter-item-min_bedrooms-stepper-increase-button'] span[class='i98ho2o atm_e2_qslrf5 atm_vy_qslrf5 atm_l8_14y27yu dir dir-ltr'] svg").click() //click on plus

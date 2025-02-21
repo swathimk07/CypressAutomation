@@ -1,6 +1,8 @@
 class airbnbsignup {
     visit() {
       cy.visit("https://www.airbnb.co.in/")
+      cy.url().should('include', 'airbnb.co.in');
+
     }
   
     clickSignUp() {
@@ -11,7 +13,9 @@ class airbnbsignup {
     fillDetails(phone) {
       //cy.scrollTo('bottom');
       cy.contains('div', 'Continue with email').click();
-      cy.get('#email-login-email').type("swathimkkulal@gmail.com")
+      cy.get('#email-login-email').should('be.visible') // Assert that the input field is visible
+      .type("swathimkkulal@gmail.com").should('have.value', 'swathimkkulal@gmail.com'); // Assert that the typed value is correct
+
       cy.get('span[class*="t1dqvypu"]').click();//clicking on continue
       cy.wait(6000)
       cy.pause()
